@@ -1,0 +1,22 @@
+{
+    "name": "jgiuliano/app-salon",
+    "description": "Proyecto App Sal\u0000n",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controller\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "JDG",
+            "email": "joadghlf@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.6",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

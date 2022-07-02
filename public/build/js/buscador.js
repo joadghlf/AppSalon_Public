@@ -1,0 +1,1 @@
+function buscador(){const n=document.querySelector(".admin #buscador");n.addEventListener("input",(function(){const o=n.value;window.location="?fecha="+o}))}document.addEventListener("DOMContentLoaded",(function(){buscador()}));
