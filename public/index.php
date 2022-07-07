@@ -60,9 +60,6 @@ $router->post('/admin/usuarios/crear',[AdminController::class, 'crear']);
 $router->post('/admin/citas/crear',[AdminController::class, 'crear']);
 
 
-echo '<pre>';
-var_dump($router);
-echo '</pre>';
 $router->comprobarRutas();
 
 
