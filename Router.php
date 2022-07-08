@@ -20,24 +20,24 @@ class Router{
         $rutas_protegidas_logueo = ['/citas','/logout'];
         $rutas_protegidas_admin = ['/admin/citas','/admin/servicios','/admin/usuarios','/admin/citas/modificar','/admin/usuarios/modificar','/admin/servicios/modificar','/admin/servicios/crear','/admin/usuarios/crear'];
 
-        $urlActual = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+        $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         echo '<pre>';
-        var_dump($urlActual);
+        var_dump($currentUrl);
         echo '</pre>';
 
         
         comprobarSession();
         if($metodo === 'GET'){
-         $fn = $this->rutasGET[$urlActual] ?? null;  
+         $fn = $this->rutasGET[$currentUrl] ?? null;  
         }else{if($metodo === 'POST'){
-            $fn = $this->rutasPOST[$urlActual] ?? null;
+            $fn = $this->rutasPOST[$currentUrl] ?? null;
             }            
         }
 
         //Comprobando rutas protegidas por logueo
-        if(in_array($urlActual, $rutas_protegidas_logueo)){
+        if(in_array($currentUrl, $rutas_protegidas_logueo)){
             if(!isset($_SESSION['loguin'])){
                 header('Location: /');
                 exit;
@@ -47,7 +47,7 @@ class Router{
         }
 
         //Comprobando rutas Admin
-        if(in_array($urlActual, $rutas_protegidas_admin)){
+        if(in_array($currentUrl, $rutas_protegidas_admin)){
             if($_SESSION['usuario']->admin != 1){
                 header('Location: /');
                 exit;
