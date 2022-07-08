@@ -20,3 +20,6 @@
     <a href="/crear" class="btn olvide">Crear cuenta</a>
     <a href="/olvide" class="btn olvide">Olvidé el password</a>
 </div>
+
+<?php 
+echo $_SERVER['SERVER_NAME'];
