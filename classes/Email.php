@@ -26,7 +26,7 @@ class Email
             $mail = $this->configInicial($mail);
             $mail->Subject = 'Correo de confirmación';
             $mail->Body    = '<html><p>Bien venido! este es el correo de confirmación para su cuenta</p>';
-            $mail->Body    .= "<p>Para confirmar su cuenta debe hacer click <a href='".$_SERVER['SERVER_NAME']."/confirmarcuenta?token={$this->token}'><b>aquí</b></a> <p><html>";
+            $mail->Body    .= "<p>Para confirmar su cuenta debe hacer click <a href='http://".$_SERVER['SERVER_NAME']."/confirmarcuenta?token={$this->token}'><b>aquí</b></a> <p><html>";
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $mail->send();
