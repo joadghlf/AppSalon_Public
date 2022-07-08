@@ -3,5 +3,4 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{HTTP_HOST} ^appsalon.formacionconsciente.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.appsalon.formacionconsciente.com$
-RewriteCond %{REQUEST_URI} !public/
 RewriteRule ^ index.php [QSA,L]
