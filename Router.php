@@ -23,14 +23,6 @@ class Router{
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
         //$currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
         $metodo = $_SERVER['REQUEST_METHOD'];
-
-        echo '<pre>';
-        var_dump($currentUrl);
-        echo '</pre>';
-        echo '<pre>';
-        var_dump($_SERVER['REQUEST_URI']);
-        echo '</pre>';
-
         
         comprobarSession();
         if($metodo === 'GET'){
