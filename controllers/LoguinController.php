@@ -11,7 +11,7 @@ class LoguinController
 
     public static function loguin(Router $router)
     {
-        isAuth();
+        //isAuth();
         $resultado = $_GET['resultado'] ?? null;
         $usuario = new Usuario();
         $errores = [];
