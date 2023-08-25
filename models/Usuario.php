@@ -55,13 +55,13 @@ class Usuario extends ActiveRecord{
             $numbers = preg_match('/\d/', $value);
             $special = preg_match('/[^a-zA-Z\d]/', $value);
             if($lowcase === 0){
-                self::$errores[] = "El password debe tener al una letra minúscula";
+                self::$errores[] = "El password debe tener al menos una letra minúscula";
             }
             if($uppcase === 0){
-                self::$errores[] = "El password debe tener al una letra mayúscula";
+                self::$errores[] = "El password debe tener al menos una letra mayúscula";
             }
             if($numbers === 0){
-                self::$errores[] = "El password debe tener al un número";
+                self::$errores[] = "El password debe tener al menos un número";
             }
             if($special === 0){
                 self::$errores[] = "El password debe tener al menos un caracter especial, como !%&(";
